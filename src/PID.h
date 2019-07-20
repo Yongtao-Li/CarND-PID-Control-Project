@@ -31,6 +31,37 @@ class PID {
    */
   double TotalError();
 
+  /**
+   *update PID coeff
+   */
+  void KpInc();
+  void KiInc();
+  void KdInc();
+  void KpDec();
+  void KiDec();
+  void KdDec();
+  void dKpInc();
+  void dKiInc();
+  void dKdInc();
+  void dKpDec();
+  void dKiDec();
+  void dKdDec();
+
+  /**
+   *print for debug
+   */
+  void piddebug();
+
+  /**
+   *reset errors
+   */
+  void ResetError();
+
+  /**
+   *turn off twiddle
+   */
+  bool ResetTwiddle(double tol);
+
  private:
   /**
    * PID Errors
@@ -45,6 +76,9 @@ class PID {
   double Kp;
   double Ki;
   double Kd;
+  double dKp;
+  double dKi;
+  double dKd;
 };
 
 #endif  // PID_H
